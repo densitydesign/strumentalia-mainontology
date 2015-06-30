@@ -79,6 +79,7 @@ angular.module('mainologyApp')
         if(!errors.length) {
           validPages.forEach(function (e, i) {
             var rgx = /wiki\/(.+)/g;
+
             console.log("input", JSON.stringify(e));
             var name = rgx.exec(e)[1];
             var truename = decodeURIComponent(name).replace(/_/g, " ");
@@ -140,7 +141,9 @@ angular.module('mainologyApp')
               var allpages = templates[i].match(/\{\{[Mm]ain\|(.+?)\}\}/)[1];
               var temppages = allpages.split('|');
               for (var j in temppages) {
-                pages.push(temppages[j]);
+                var lblrgx = /^l.=/g;
+                var islabel = lblrgx.exec(temppages[j]);
+                if (islabel === null) pages.push(temppages[j].split("#")[0]);
 
               }
             }
@@ -369,7 +372,7 @@ $scope.$watch("visiteds",function(newValue,oldValue){
     };
 
     $scope.downloadGEXF = function() {
-      var gexfDoc = gexf.create();
+      var gexfDoc = gexf.create({defaultEdgeType: 'directed'});
 
       gexfDoc.addNodeAttribute({id: 'level', title: 'Level', type: 'integer'});
       gexfDoc.addNodeAttribute({id: 'size', title: 'Size', type: 'integer'});

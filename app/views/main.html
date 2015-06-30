@@ -54,7 +54,7 @@
         <div class="col-md-10 play">
           <button ng-show="finished" type="button" ng-click="update()" class="btn btn btn-success btn-lg btn-block">Start Crawling</button>
           <div style="margin:0" ng-show="!finished && visited<count"  class="btn btn btn-success btn-lg btn-block">{{visited}} / {{count}} parent nodes resolved</div>
-          <div style="margin:0" ng-show="!finished && visited==count"  class="btn btn btn-success btn-lg btn-block">Retrieving leaves information</div>
+          <div style="margin:0" ng-show="!finished && visited>=count"  class="btn btn btn-success btn-lg btn-block">Retrieving leaves information</div>
         </div>
 
 
