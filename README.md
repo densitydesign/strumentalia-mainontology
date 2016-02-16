@@ -1,4 +1,4 @@
-# strumentalia-mainology
+# strumentalia-mainontology
 
 On Wikipedia, when an article's section becomes too big, it stems in a new article ([see here](https://en.wikipedia.org/wiki/Wikipedia:Summary_style)). The link among the two pages is defined using the "main" template. One complex topic is therefore covered by many articles. This tool allows you to follow the ["main article"](https://en.wikipedia.org/wiki/Template_talk:Main) links starting from one or more pages. This tool works only with the English version of Wikipedia.
 
